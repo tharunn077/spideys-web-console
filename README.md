@@ -3,8 +3,13 @@
 An advanced, full-stack Intelligent Network Monitoring System built upon a decoupled Backend-as-a-Service (BaaS) architecture. This system utilizes a persistent Python collector operating outside the web server to stream over 25 granular hardware and network metrics to a Google Firebase Firestore database in real-time. The data is visualized instantly through a custom-built Vanilla JavaScript and CSS3 Single Page Application (SPA)
 
 ## 📸 Dashboard Preview
-*(Upload your screenshots from your report to the repo and link them here!)*
-![Device Specs](link_to_device_specs_image.png)
+
+* **Device Specs Module:**
+  
+![Device Specs](https://github.com/tharunn077/spideys-web-console/blob/8e42a6b0a5b2d94ed1ec82fa266aafd2a5e2f4d7/net1.png)
+
+* ** Network Information Module:**
+  
 ![Real-Time Core](link_to_real_time_core_image.png)
 
 ## 🚀 Key Intelligent Features
