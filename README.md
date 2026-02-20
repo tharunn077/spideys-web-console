@@ -18,8 +18,8 @@ An advanced, full-stack Intelligent Network Monitoring System built upon a decou
 
 ## 🚀 Key Intelligent Features
 * **Real-Time Core Monitoring:** Live, high-frequency tracking of CPU Load, RAM Usage, Disk I/O, Battery Status, and GPU utilization updating every 5 seconds
-* **Intelligent GPU Fallback:** Custom logic that accurately approximates GPU utilization (calculated at 75% of CPU load) for systems with integrated graphics (e.g., Intel Iris) when vendor tools are unavailable[cite: 286, 287].
-* **Calibrated Network Diagnostics:** Executes on-demand bandwidth testing via `speedtest-cli`, applying a custom 0.35 scaling factor to normalize results for realistic, trustworthy network capacity reporting[cite: 263, 281].
+* **Intelligent GPU Fallback:** Custom logic that accurately approximates GPU utilization (calculated at 75% of CPU load) for systems with integrated graphics (e.g., Intel Iris) when vendor tools are unavailable.
+* **Calibrated Network Diagnostics:** Executes on-demand bandwidth testing via `speedtest-cli`, applying a custom 0.35 scaling factor to normalize results for realistic, trustworthy network capacity reporting.
 * **Deep Health Insights:** Measures Packet Loss, Network Jitter, and live Public IP Geo-location (City, Country, ISP)
 * **Zero-Latency UI:** A high-performance pure JavaScript frontend utilizing Firebase native listeners to update dynamic charts and KPIs instantly upon data arrival without page reloads
 
