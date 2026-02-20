@@ -14,7 +14,7 @@ An advanced, full-stack Intelligent Network Monitoring System built upon a decou
 
 * **Hardware Utilization Module:**
 
-  ![Hardware_Utilization]https://github.com/tharunn077/spideys-web-console/blob/5e45dc4046f1798db8f857efe472921adbb7a42e/net2.png
+![Hardware_Utilization](https://github.com/tharunn077/spideys-web-console/blob/9b9f9e9a3a867be2ef22ee744ff53e2b94aa6e3a/net3.png)
 
 ## 🚀 Key Intelligent Features
 * **Real-Time Core Monitoring:** Live, high-frequency tracking of CPU Load, RAM Usage, Disk I/O, Battery Status, and GPU utilization updating every 5 seconds
