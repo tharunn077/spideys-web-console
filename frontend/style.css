@@ -1,0 +1,295 @@
+/* Animated Card Effects */
+.animated-card {
+    animation: cardEnter 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+.animated-card .icon {
+    display: inline-block;
+    font-size: 1.7em;
+    margin-right: 10px;
+    filter: drop-shadow(0 2px 6px #1e90ff44);
+    animation: iconPulse 2s infinite;
+}
+.animated-card:hover {
+    box-shadow: 0 16px 48px 0 rgba(0,184,148,0.18), 0 2px 32px 0 rgba(30,144,255,0.18);
+    transform: translateY(-2px) scale(1.02);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.animated-card::before {
+    content: "";
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, #1e90ff33 0%, #00b89422 100%);
+    opacity: 0.5;
+    z-index: 0;
+    border-radius: 50%;
+    animation: cardGlow 3s infinite alternate;
+}
+.animated-card .card-title, .animated-card .card-content {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes cardEnter {
+    0% { opacity: 0; transform: scale(0.95) translateY(30px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes iconPulse {
+    0%, 100% { filter: drop-shadow(0 2px 6px #1e90ff44); }
+    50% { filter: drop-shadow(0 6px 18px #00b89488); }
+}
+@keyframes cardGlow {
+    from { opacity: 0.5; }
+    to { opacity: 0.9; }
+}
+/* Layout and Sidebar */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+}
+.sidebar {
+    width: 260px;
+    background: rgba(30,144,255,0.95);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0 0 0;
+    box-shadow: 2px 0 16px rgba(30,144,255,0.08);
+    z-index: 2;
+}
+.sidebar-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 38px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.sidebar-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    align-items: center;
+}
+.sidebar-tab {
+    background: rgba(255,255,255,0.13);
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1.15rem;
+    padding: 16px 0;
+    width: 85%;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(30,144,255,0.07);
+}
+.sidebar-tab.active, .sidebar-tab:hover {
+    background: linear-gradient(90deg, #00b894 0%, #1e90ff 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(30,144,255,0.13);
+}
+.tab-icon {
+    font-size: 1.3rem;
+}
+.tab-label {
+    font-size: 1.1rem;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+.tab-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* Glassmorphism Card */
+.card.glass {
+    background: rgba(255,255,255,0.55);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(30,144,255,0.13);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 38px 32px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.2s;
+}
+.card.glass:hover {
+    box-shadow: 0 12px 40px rgba(30,144,255,0.18);
+}
+.card-title {
+    font-size: 1.5rem;
+    color: #1e90ff;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.card-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.card-content li {
+    font-size: 1.08rem;
+    color: #333;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(30,144,255,0.07);
+}
+.card-content li:last-child {
+    border-bottom: none;
+}
+.card-content strong {
+    color: #00b894;
+    min-width: 160px;
+    font-weight: 600;
+}
+.card-content span {
+    font-weight: 500;
+    color: #222;
+}
+
+@media (max-width: 900px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        padding: 18px 0;
+        box-shadow: none;
+    }
+    .main-content {
+        padding: 24px 8px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, #1e90ff 60%, #00b894 100%);
+    color: white;
+    padding: 32px 0 24px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+}
+.tab {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    color: #1e90ff;
+    padding: 0.7rem 2.2rem;
+    margin: 0 0.2rem;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 500;
+}
+.tab.active {
+    background: #1e90ff;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(30,144,255,0.08);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    min-height: 70vh;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s;
+}
+.tab-content.active {
+    display: block;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+    padding: 28px 24px;
+    margin-bottom: 24px;
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 0 4px 24px rgba(30,144,255,0.13);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: #1e90ff;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.card-content {
+    font-size: 1.05rem;
+    color: #333;
+}
+
+@media (max-width: 700px) {
+    main {
+        padding: 12px 4px;
+    }
+    .card {
+        padding: 18px 8px;
+    }
+    .tab {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-title">Network Management System</div>
+            <nav class="sidebar-tabs">
+                <button id="deviceSpecsTab" class="sidebar-tab active">
+                    <span class="tab-icon">🖥️</span>
+                    <span class="tab-label">Device Specs</span>
+                </button>
+                <button id="networkTab" class="sidebar-tab">
+                    <span class="tab-icon">🌐</span>
+                    <span class="tab-label">Network</span>
+                </button>
+                <button id="realtimeTab" class="sidebar-tab">
+                    <span class="tab-icon">⚡</span>
+                    <span class="tab-label">Real-Time Info</span>
+                </button>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section id="deviceSpecsSection" class="tab-content active">
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">�</span> Device Info</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>💻 <strong>Model:</strong> <span id="spec-device-model">Loading...</span></li>
+                            <li>🖥️ <strong>OS:</strong> <span id="spec-os-name">Loading...</span></li>
+                            <li>🔢 <strong>OS Version:</strong> <span id="spec-os-version">Loading...</span></li>
+                            <li>🏢 <strong>BIOS Vendor:</strong> <span id="spec-bios-vendor">Loading...</span></li>
+                            <li>🔖 <strong>BIOS Version:</strong> <span id="spec-bios-version">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">�</span> CPU & RAM</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>🧑‍💻 <strong>Processor:</strong> <span id="spec-processor-model">Loading...</span></li>
+                            <li>🧩 <strong>Cores:</strong> <span id="spec-cpu-cores">Loading...</span></li>
+                            <li>🧵 <strong>Threads:</strong> <span id="spec-cpu-threads">Loading...</span></li>
+                            <li>🔥 <strong>TDP (W):</strong> <span id="spec-cpu-tdp">Loading...</span></li>
+                            <li>🗄️ <strong>RAM (GB):</strong> <span id="spec-ram-total">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">🎮</span> GPU</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>🎨 <strong>Model:</strong> <span id="spec-gpu-model">Loading...</span></li>
+                            <li>💾 <strong>Memory (GB):</strong> <span id="spec-gpu-memory">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="networkSection" class="tab-content">
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">🌐</span> Network Info</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>🔗 <strong>Interface:</strong> <span id="spec-network-interface">Loading...</span></li>
+                            <li>🏠 <strong>Private IP:</strong> <span id="spec-private-ip">Loading...</span></li>
+                            <li>🆔 <strong>MAC:</strong> <span id="spec-mac-address">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">🚦</span> Network Performance</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>⬇️ <strong>Download (Mbps):</strong> <span id="metric-download">Loading...</span></li>
+                            <li>⬆️ <strong>Upload (Mbps):</strong> <span id="metric-upload">Loading...</span></li>
+                            <li>🎯 <strong>Jitter (ms):</strong> <span id="metric-jitter">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">🌍</span> ISP & Location</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>🌐 <strong>Public IP:</strong> <span id="metric-public-ip">Loading...</span></li>
+                            <li>🏙️ <strong>Region:</strong> <span id="metric-region">Loading...</span></li>
+                            <li>🌏 <strong>Country:</strong> <span id="metric-country">Loading...</span></li>
+                            <li>🏢 <strong>ISP:</strong> <span id="metric-isp-name">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                    <div style="text-align:center; margin-bottom:24px;">
+                        <button id="runSpeedTestBtn" style="padding:8px 20px; font-size:1rem;">Run Speed Test</button>
+                    </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">📶</span> WiFi Details</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>📶 <strong>SSID:</strong> <span id="metric-wifi-ssid">Loading...</span></li>
+                            <li>📡 <strong>Signal (%):</strong> <span id="metric-wifi-signal">Loading...</span></li>
+                            <!-- Link Speed removed as requested -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="realtimeSection" class="tab-content">
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">💽</span> Disk</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>📖 <strong>Disk Read (MB/s):</strong> <span id="realtime-disk-read">Loading...</span></li>
+                            <li>✍️ <strong>Disk Write (MB/s):</strong> <span id="realtime-disk-write">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">🔋</span> Battery</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>🔋 <strong>Battery (%):</strong> <span id="realtime-battery">Loading...</span></li>
+                            <li>🔌 <strong>Power Plugged:</strong> <span id="realtime-power-plugged">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">⚡</span> Real-Time System Info</div>
+                    <div class="card-content" id="realtimeContent">
+                        <ul>
+                            <li>🧠 <strong>CPU Load (%):</strong> <span id="realtime-cpu-load">Loading...</span></li>
+                            <li>🗄️ <strong>RAM Usage (%):</strong> <span id="realtime-ram-usage">Loading...</span></li>
+                            <li>💾 <strong>Disk Usage (%):</strong> <span id="realtime-disk-usage">Loading...</span></li>
+                            <li>🎮 <strong>GPU Utilization (%):</strong> <span id="realtime-gpu-utilization">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card glass animated-card">
+                    <div class="card-title"><span class="icon">🚀</span> Real-Time Speeds</div>
+                    <div class="card-content">
+                        <ul>
+                            <li>⬇️ <strong>Download (Mbps):</strong> <span id="realtime-download">Loading...</span></li>
+                            <li>⬆️ <strong>Upload (Mbps):</strong> <span id="realtime-upload">Loading...</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    </main>
+</body>
+</html>
