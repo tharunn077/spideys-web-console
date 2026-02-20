@@ -8,9 +8,13 @@ An advanced, full-stack Intelligent Network Monitoring System built upon a decou
   
 ![Device Specs](https://github.com/tharunn077/spideys-web-console/blob/8e42a6b0a5b2d94ed1ec82fa266aafd2a5e2f4d7/net1.png)
 
-* ** Network Information Module:**
+* **Network Information Module:**
   
-![Real-Time Core](link_to_real_time_core_image.png)
+![Real-Time Core](https://github.com/tharunn077/spideys-web-console/blob/5e45dc4046f1798db8f857efe472921adbb7a42e/net2.png)
+
+* **Hardware Utilization Module:**
+
+  ![Hardware_Utilization]https://github.com/tharunn077/spideys-web-console/blob/5e45dc4046f1798db8f857efe472921adbb7a42e/net2.png
 
 ## 🚀 Key Intelligent Features
 * **Real-Time Core Monitoring:** Live, high-frequency tracking of CPU Load, RAM Usage, Disk I/O, Battery Status, and GPU utilization updating every 5 seconds
