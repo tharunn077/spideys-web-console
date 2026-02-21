@@ -33,6 +33,6 @@ An advanced, full-stack Intelligent Network Monitoring System built upon a decou
 1. Clone the repository and navigate to the project folder.
 2. Install the required Python dependencies:
    pip install flask flask_cors psutil speedtest-cli firebase-admin requests
-3. Add your Firebase credentials JSON file to the secure backend directory (ensure it is added to .gitignore).
+3. Add your Firebase credentials JSON file to the secure backend directory.
 4. Start the Flask backend API and the Python collector script.
 5. Launch index.html via a local Live Server to view the dashboard.
